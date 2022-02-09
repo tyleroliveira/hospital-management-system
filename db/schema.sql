@@ -1,2 +1,2 @@
--- drop database if exists DB_NAME;
-create database DB_NAME;
+-- drop database if exists hospital_DB;
+create database hospital_DB;
