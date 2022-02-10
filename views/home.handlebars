@@ -1,12 +1,14 @@
-<h1>Caretrol</h1>
-<h1>Home</h1>
+<h1>We make Hospital Management made simple.</h1>
 {{#if isLoggedIn}}
   <h2>Welcome, {{user.username}}!</h2>
   <p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
-<p>Welcome. Thanks</p>
+<p>CareTrol offers a simplified system that helps Employees in the Medical field better
+  manage their staff and their patients. CareTrol also makes it easy for patients
+  to access their Medical details. Get started by clicking on the Sign Up button below.
+</p>
 <p>Making Hospital management simple for staff and patients!</p>
 {{#unless isLoggedIn}}
-  <br />
-  <a class='btn' href='/signup'>Sign Up</a>
+  
+  <p><a class='btn-signup' href='/signup'>Sign Up</a></p>
 {{/unless}}
