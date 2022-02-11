@@ -1,12 +1,17 @@
 <h1>Caretrol</h1>
-<h1>Patients</h1>
-{{#if isLoggedIn}}
-  <h2>Welcome, {{user.username}}!</h2>
-  <p>Your id is <strong>{{user.id}}</strong>.</p>
-{{/if}}
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quasi ab harum
-  sequi quis iure voluptatibus doloremque dicta optio maiores!</p>
+<h1>Patient Information</h1>
+{{!-- {{#if isLoggedIn}} --}}
+  <h2>Welcome, {{patient.first_name}} {{patient.last_name}}</h2>
+  <p><strong>Your ID:</strong> <strong>{{user.id}}</strong></p>
+  <p><strong>Next Scheduled Visit:</strong> {{patient.next_scheduled_visit}}</p>
+  <p><strong>Medicine:</strong> {{patient.medicine}}</p>
+  <p><strong>Description:</strong> {{patient.description}}</p>
+  <p><strong>Treatment Details:</strong> {{patient.treatment_details}}</p>
+  <p><strong>Insurance:</strong> {{patient.insurance}}</p>
+  <p><strong>Amount Owed:</strong> {{patient.amount_owed}}</p>
+  <p><strong>Current Address:</strong> {{patient.address}}, {{patient.city}}, {{patient.state}}, {{patient.zip}}, {{patient.country}}</p>
+{{!-- {{/if}} --}}
+
 {{#unless isLoggedIn}}
   <br />
   {{!-- <a class='btn' href='/signup'>Sign Up</a> --}}
