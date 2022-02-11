@@ -18,18 +18,24 @@ const handleSignupSubmit = async (event) => {
       return;
     }
 
-    const response = await fetch("/api/patient", {
+    const response = await fetch("/api/patient/signup", {
       method: "POST",
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({
+        username,
+        password
+      }),
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
       },
     });
 
-    if (!response.ok) {
-      alert("Failed to sign up.");
-      return;
-    }
+    if (response.ok) {
+      document.location.replace('/patient');
+    } 
+    // else {
+    //   alert(response.statusText);
+    // }
+    
 
     // go to home page
     window.location.replace("/");
