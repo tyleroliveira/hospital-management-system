@@ -1,6 +1,6 @@
 document.querySelector(".btn-logout").addEventListener("click", async () => {
   try {
-    await fetch("/api/users/logout", { method: "POST" });
+    await fetch("/api/patient/logout", { method: "POST" });
     document.location.replace("/login");
   } catch (error) {
     console.error(error);

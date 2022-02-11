@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../models");
+// const { Patient} = require("../models");
 
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
@@ -8,41 +8,34 @@ const { User } = require("../models");
 // router.get("/users-only", withAuth, (req, res) => {
 //   // ...
 // });
+router.get("/", (req, res) => {
+  
 
-router.get("/", async (req, res) => {
-  try {
-    let user;
-    if (req.session.isLoggedIn) {
-      user = await User.findByPk(req.session.userId, {
-        exclude: ["password"],
-        raw: true,
-      });
-    }
-    res.render("home", {
-      title: "Home Page",
-      isLoggedIn: req.session.isLoggedIn,
-      user,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("⛔ Uh oh! An unexpected error occurred.");
-  }
+  res.render("home");
 });
 
+
 router.get("/login", (req, res) => {
+  // If the user is already logged in, redirect the request to home route
+  if (req.session.logged_in) {
+    res.redirect('/patient');
+    return;
+  }
+
   res.render("login", { title: "Log-In Page" });
 });
 
 router.get("/signup", (req, res) => {
+ 
   res.render("signup", { title: "Sign-Up Page" });
 });
 
-router.get("/patient", (req, res) => {
-  res.render("patient", { title: "Sign-Up Page" });
+router.get("/Info", (req, res) => {
+  res.render("info", { title: "Info Page" });
 });
 
-router.get("/admin", (req, res) => {
-  res.render("admin", { title: "Sign-Up Page" });
+router.get("/update", (req, res) => {
+  res.render("update", { title: "Update Page" });
 });
 
 module.exports = router;
