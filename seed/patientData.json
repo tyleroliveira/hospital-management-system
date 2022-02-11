@@ -1,0 +1,53 @@
+[
+  {
+    "first_name": "Oliver",
+    "last_name": "Brown",
+    "address": "2736 Worden St",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92110",
+    "country": "USA",
+    "medicine": "Acyclovir",
+    "description": "patient is in good health",
+    "insurance": "Sharp",
+    "treatment_details": "take 1 tablet daily",
+    "next_scheduled_visit": "3/1/2022",
+    "amount_owed": "0",
+    "username": "OliverBrown",
+    "password": "password123"
+  },
+  {
+    "first_name": "Elijah",
+    "last_name": "Jones",
+    "address": "5815 Roswell St",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92103",
+    "country": "USA",
+    "medicine": "Alendronate",
+    "description": "patient is in good health",
+    "insurance": "Scripps",
+    "treatment_details": "take 2 tablets daily",
+    "next_scheduled_visit": "4/1/2022",
+    "amount_owed": "100",
+    "username": "ElijahJones",
+    "password": "password123"
+  },
+  {
+    "first_name": "Sophia",
+    "last_name": "Garcia",
+    "address": "8662 Lake Ashmere Dr",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92103",
+    "country": "USA",
+    "medicine": "Allopurinol",
+    "description": "patient is dying",
+    "insurance": "Medicare",
+    "treatment_details": "in ICU",
+    "next_scheduled_visit": "2/20/2022",
+    "amount_owed": "20000",
+    "username": "SophiaGarcia",
+    "password": "password123"
+  }
+]

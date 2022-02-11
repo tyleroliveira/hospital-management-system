@@ -1,0 +1,14 @@
+[
+  {
+    "hos_id": 1,
+    "patient_id": 1
+  },
+  {
+    "hos_id": 2,
+    "patient_id": 2
+  },
+  {
+    "hos_id": 3,
+    "patient_id": 3
+  }
+]
