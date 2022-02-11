@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Sharp",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92108",
+    "country": "USA"
+  },
+  {
+    "name": "Scripps",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92108",
+    "country": "USA"
+  },
+  {
+    "name": "UCSD Medical Center",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92108",
+    "country": "USA"
+  }
+]
