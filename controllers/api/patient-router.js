@@ -3,19 +3,13 @@ const router = require("express").Router();
 
 // /"/api/patient/signup"
 router.post("/signup", async (req, res) => {
-  console.log("Api Signup route", req.body);
+  // console.log("Api Signup route", req.body);
   //const { username, password } = req.body;
  // insert in to the user table using controller 
   try {
     const userData = await Patient.create(req.body);
-    console.log("userData", userData);
-    //  username = req.body.username,
-    // password = req.body.password
-
-    const patientData = userData.get({ plain: true }); 
-    
-    res.render("patient",{ patient: patientData, message: 'You are now logged in!' });
-
+     console.log("UserData", req.body);
+     res.json(userData);
   } catch (err) {
     res.status(400).json(err);
   }
