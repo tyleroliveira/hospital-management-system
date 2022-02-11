@@ -20,55 +20,55 @@ Patient.init(
     },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     address: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     state: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     zip: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     country: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     medicine: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     insurance: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     treatment_details: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     next_scheduled_visit: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
     },
     amount_owed: {
       type: DataTypes.DECIMAL,
-      allowNull: false,
+      allowNull: true,
     },
     username: {
       type: DataTypes.STRING,
