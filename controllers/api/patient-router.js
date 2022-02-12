@@ -20,25 +20,35 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   //const { username, password } = req.body;
-  try {
+  console.log("login");
+  console.log(req.body);
+  // try {
+    console.log("try");
     const patientData = await Patient.findOne({
+      // where: {
+      //   email: req.body.email
+      // }
       where: {
-        email: req.body.email
+        username: req.body.username
       }
+      
     });
 
     if (!patientData) {
+      console.log("patientData");
       res
         .status(400)
         .json({
           message: 'Incorrect email or password, please try again'
         });
       return;
+      
     }
 
     const validPassword = await patientData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log("validPassword");
       res
         .status(400)
         .json({
@@ -47,6 +57,8 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    console.log("Patient Logged In");
+    res.set.status(200);
     req.session.user_id = patientData.id;
     req.session.logged_in = true;
 
@@ -54,9 +66,10 @@ router.post("/login", async (req, res) => {
       user: patientData,
       message: 'You are now logged in!'
     }));
-  } catch (err) {
-    res.status(400).json(err);
-  }
+  // } catch (err) {
+  //   console.log("catch");
+  //   res.status(400).json(err);
+  // }
 
 
 
