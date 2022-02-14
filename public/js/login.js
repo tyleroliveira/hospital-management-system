@@ -23,8 +23,8 @@ const handleLoginSubmit = async (event) => {
       return;
     }
 
-    // go to home page
-    window.location.replace("/");
+    // go to patientInfo Page
+    window.location.replace("/patient/info");
   } catch (error) {
     console.log(error);
   }

@@ -13,7 +13,7 @@ const withAuth = (req, res, next) => {
   }
 
   // Redirect to the login page for all other requests
-  return res.redirect("/login");
+  return res.redirect("/patient/login");
 };
 
 module.exports = withAuth;
