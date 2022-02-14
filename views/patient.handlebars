@@ -1,6 +1,6 @@
 <h1>Caretrol</h1>
 <h1>Patient Information</h1>
-{{!-- {{#if isLoggedIn}} --}}
+{{!-- {{#if logged_in}} --}}
   <h2>Welcome, {{patient.first_name}} {{patient.last_name}}</h2>
   <p><strong>Your ID:</strong> <strong>{{user.id}}</strong></p>
   <p><strong>Next Scheduled Visit:</strong> {{patient.next_scheduled_visit}}</p>
@@ -12,7 +12,7 @@
   <p><strong>Current Address:</strong> {{patient.address}}, {{patient.city}}, {{patient.state}}, {{patient.zip}}, {{patient.country}}</p>
 {{!-- {{/if}} --}}
 
-{{#unless isLoggedIn}}
+{{#unless logged_in}}
   <br />
   {{!-- <a class='btn' href='/signup'>Sign Up</a> --}}
 {{/unless}}
