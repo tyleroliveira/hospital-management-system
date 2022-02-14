@@ -11,7 +11,7 @@
 </div>
 
 <h1>We make Hospital Management made simple.</h1>
-{{#if isLoggedIn}}
+{{#if logged_in}}
   <h2>Welcome, {{user.username}}!</h2>
   <p>Your id is <strong>{{user.id}}</strong>.</p>
 {{/if}}
@@ -22,7 +22,7 @@
 <p>Making Hospital management simple for staff and patients!</p>
 <p>At this time, our focus is to put Patients being treated first. If you have been treated by a Hospital, Clinic, or Doctor's Office using our service, then you should be able to create a Username a on our website to see your Medical Information. Click Sign Up to start.</p>
 
-{{#unless isLoggedIn}}
+{{#unless logged_in}}
   
   <p><a class='btn-signup' href='patient/signup'>Sign Up</a></p>
 {{/unless}}

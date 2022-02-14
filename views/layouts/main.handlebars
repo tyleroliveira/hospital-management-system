@@ -14,7 +14,7 @@
       <h1><a href="/">CareTrol</a></h1>
     <nav>
       <a href='/'>Home</a>
-      {{#if isLoggedIn}}
+      {{#if logged_in}}
         <button class='btn btn-logout'>Log Out</button>
         <a href='/patient/info'>Your Patient Data</a>
       {{else}}
