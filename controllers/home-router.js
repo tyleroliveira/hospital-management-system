@@ -69,5 +69,4 @@ router.get("/patient/info", async (req, res) => {
 });
 
 
-
 module.exports = router;

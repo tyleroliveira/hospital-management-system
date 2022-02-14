@@ -1,6 +1,4 @@
-const {
-  Patient
-} = require("../../models");
+const { Patient } = require("../../models");
 
 const router = require("express").Router();
 
@@ -42,7 +40,7 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-    console.log("patient found");
+
     const validPassword = await patientData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -51,7 +49,6 @@ router.post("/login", async (req, res) => {
       });
       return;
     }
-
     req.session.user_id = patientData.id;
     req.session.logged_in = true;
 
