@@ -57,7 +57,7 @@ router.get("/patient/info", async (req, res) => {
     });
     console.log(patient);
     res.render('patient', {
-      ...patient,
+      patient,
       logged_in: true
     });
   } catch (err) {
