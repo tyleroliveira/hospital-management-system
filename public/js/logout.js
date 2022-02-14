@@ -1,5 +1,5 @@
 const logout = async () => {
-    const response = await fetch('/patient/logout', {
+    const response = await fetch('/api/patient/logout', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });

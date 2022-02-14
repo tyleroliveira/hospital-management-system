@@ -68,5 +68,9 @@ router.get("/patient/info", async (req, res) => {
 
 });
 
+router.get("/patient/update", (req, res) => {
+  res.render("update");
+});
+
 
 module.exports = router;
