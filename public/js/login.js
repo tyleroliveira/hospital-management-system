@@ -10,7 +10,7 @@ const handleLoginSubmit = async (event) => {
       return;
     }
 
-    const response = await fetch("/api/login", {
+    const response = await fetch("/api/patient/login", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: {
@@ -23,8 +23,8 @@ const handleLoginSubmit = async (event) => {
       return;
     }
 
-    // go to home page
-    window.location.replace("/");
+    // go to patientInfo Page
+    window.location.replace("/patient/info");
   } catch (error) {
     console.log(error);
   }

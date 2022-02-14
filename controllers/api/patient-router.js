@@ -1,33 +1,52 @@
-const { Patient } = require("../../models");
+const {
+  Patient
+} = require("../../models");
+
 const router = require("express").Router();
 
 // /"/api/patient/signup"
 router.post("/signup", async (req, res) => {
-  // console.log("Api Signup route", req.body);
-  //const { username, password } = req.body;
- // insert in to the user table using controller 
+  // insert in to the user table using controller 
   try {
     const userData = await Patient.create(req.body);
-     console.log("UserData", req.body);
-     res.json(userData);
+    req.session.user_id = userData.id;               //
+    req.session.logged_in = true;                    //
+    console.log("UserData", req.body);
+    res.json(userData);
   } catch (err) {
     res.status(400).json(err);
   }
 
-
-  
 });
 
+
 router.post("/login", async (req, res) => {
-  //const { username, password } = req.body;
+  const {
+    username,
+    password
+  } = req.body;
+  // console.log("login");
+  console.log("USERNAME_", username);
+  console.log("PASSWORD", password);
+
+
   try {
+    console.log("TRY");
+
+
     const patientData = await Patient.findOne({
       where: {
-        email: req.body.email
+        username: req.body.username
       }
     });
+    
 
-    if (!patientData) {
+    const patientUser = req.body.username;
+    const patientUserNameT = patientData.username;
+
+
+    if ((patientUserNameT !== patientUser)) {
+
       res
         .status(400)
         .json({
@@ -35,10 +54,10 @@ router.post("/login", async (req, res) => {
         });
       return;
     }
+    const userPassword = req.body.password;
+    const validPassword = patientData.password;
 
-    const validPassword = await patientData.checkPassword(req.body.password);
-
-    if (!validPassword) {
+    if (userPassword !== validPassword) {
       res
         .status(400)
         .json({
@@ -49,6 +68,8 @@ router.post("/login", async (req, res) => {
 
     req.session.user_id = patientData.id;
     req.session.logged_in = true;
+    
+
 
     req.session.save(() => res.json({
       user: patientData,
@@ -57,12 +78,8 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-
-
-
-
-
 });
+
 
 router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
