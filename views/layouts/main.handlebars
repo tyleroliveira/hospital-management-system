@@ -16,8 +16,9 @@
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
         <button class='btn btn-logout'>Log Out</button>
+        <a href='/patient/info'>Your Patient Data</a>
       {{else}}
-        <a href='/patient'>Patient</a>
+        
         <a href='/patient/login'>Log In</a>
         <a href='/patient/signup'>Sign Up</a>
       {{/if}}

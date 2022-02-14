@@ -1810,12 +1810,15 @@ form [type='radio'] {
       float: none;
       padding: 0 10%;
       }
-  
+      
+
   header h1 {
       display: inline-block;
       width: 100%;
       }
-
+      .display-flex {
+        display: block !important;
+        }
       nav ul {
           margin: 0px 0px;
           display: block;
@@ -1824,8 +1827,6 @@ form [type='radio'] {
       nav a {
           font-size: medium;
       }
-
-  
 }
 
 @media (max-width: 601px) {
