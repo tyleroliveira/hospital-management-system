@@ -40,8 +40,8 @@ router.get("/patient/info", (req, res) => {
   });
 });
 
-// router.get("/patient/update", (req, res) => {
-//   res.render("update", { title: "Update Page" });
-// });
+router.get("/patient/update", (req, res) => {
+  res.render("update", { title: "Update Page" });
+});
 
 module.exports = router;
