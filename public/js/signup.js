@@ -7,17 +7,14 @@ const handleSignupSubmit = async (event) => {
     const confirmPassword = document
       .querySelector("#confirm-password")
       .value.trim();
-
     if (!username || !password) {
       alert("You must provide a username and password.");
       return;
     }
-
     if (password !== confirmPassword) {
       alert("Passwords to not match.");
       return;
     }
-
     const response = await fetch("/api/patient/signup", {
       method: "POST",
       body: JSON.stringify({
@@ -28,22 +25,14 @@ const handleSignupSubmit = async (event) => {
         "Content-Type": "application/json; charset=UTF-8",
       },
     });
-
     if (response.ok) {
       document.location.replace('/patient');
     } 
-    // else {
-    //   alert(response.statusText);
-    // }
-    
-
-    // go to home page
-    window.location.replace("/patient/info");
+    window.location.replace("/patient/update");
   } catch (error) {
     console.log(error);
   }
 };
-
 document
   .querySelector(".signup-form")
   .addEventListener("submit", handleSignupSubmit);
