@@ -60,7 +60,7 @@ Patient.init(
       allowNull: true,
     },
     next_scheduled_visit: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: true,
     },
     amount_owed: {
@@ -81,7 +81,6 @@ Patient.init(
       // set up beforeCreate lifecycle "hook" functionality
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
-        newUserData.next_scheduled_visit = dayjs(newUserData.next_scheduled_visit).format('dddd, D : MMMM | YYYY');
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
