@@ -37,11 +37,13 @@ nav a {
   cursor: pointer;
   font-size: 16px;
 }
-
 .btn-signup:hover {
   background-color: #cecece;
 }
-
+.btn {
+  color: #ffffff;
+  background-color: #008cba !important;
+}
 .btn:hover {
   background-color: #cecece;
 }
