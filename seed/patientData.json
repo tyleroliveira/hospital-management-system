@@ -11,7 +11,7 @@
     "description": "patient is in good health",
     "insurance": "Sharp",
     "treatment_details": "take 1 tablet daily",
-    "next_scheduled_visit": "3/1/2022",
+    "next_scheduled_visit": "2022-06-02",
     "amount_owed": "0",
     "username": "OliverBrown",
     "password": "password123"
@@ -28,7 +28,7 @@
     "description": "patient is in good health",
     "insurance": "Scripps",
     "treatment_details": "take 2 tablets daily",
-    "next_scheduled_visit": "4/1/2022",
+    "next_scheduled_visit": "2022-03-01",
     "amount_owed": "100",
     "username": "ElijahJones",
     "password": "password123"
@@ -45,7 +45,7 @@
     "description": "patient is dying",
     "insurance": "Medicare",
     "treatment_details": "in ICU",
-    "next_scheduled_visit": "2/20/2022",
+    "next_scheduled_visit": "2022-04-05",
     "amount_owed": "20000",
     "username": "SophiaGarcia",
     "password": "password123"

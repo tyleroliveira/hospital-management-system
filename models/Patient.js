@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
+const dayjs = require("dayjs");
 class Patient extends Model {
   checkPassword(loginPw) {
     return bcrypt.compare(loginPw, this.password);
@@ -59,7 +60,7 @@ Patient.init(
       allowNull: true,
     },
     next_scheduled_visit: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
     },
     amount_owed: {
@@ -80,6 +81,7 @@ Patient.init(
       // set up beforeCreate lifecycle "hook" functionality
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        newUserData.next_scheduled_visit = dayjs(newUserData.next_scheduled_visit).format('dddd, D : MMMM | YYYY');
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
